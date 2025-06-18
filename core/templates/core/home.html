@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- Cabecera -->
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'core/img/profileImage.png' %}" alt="profile picture">
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-upper">Welcome to my website</span>
+          <span class="section-heading-lower">I'm Javi</span>
+        </h2>
+        <p class="mb-3">I'm business management engineer specialized in marketing, sales and web development.
+          I have a passion for creating innovative solutions that drive business growth and enhance customer experiences.
+        </p>
+        <div class="intro-button mx-auto">
+          <a class="btn btn-primary btn-xl" href="{% url "store" %}">Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mensaje -->
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-upper">Total Commintment</span>
+            <span class="section-heading-lower" style="font-size: clamp(2rem, 8vw, 3rem);">Warranted</span>
+          </h2>
+          <p class="mb-0">My expertise lies in leveraging technology to optimize processes and deliver exceptional results.
+          With a strong foundation in business principles and a keen eye for detail, I am dedicated to helping organizations achieve their goals through strategic planning and effective execution.
+          Whether it's developing a comprehensive marketing strategy, implementing efficient sales processes, or building user-friendly websites, I am committed to delivering high-quality work that exceeds expectations.
+          Let's work together to take your business to the next level!.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

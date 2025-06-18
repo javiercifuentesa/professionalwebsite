@@ -1,0 +1,56 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Portfolio
+{% endblock %}
+
+{% block content %}
+  <section class="page-section cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <div class="cta-inner text-center rounded">
+            <h2 class="section-heading mb-5">
+              <span class="section-heading-upper">Thank you for visiting my</span>
+              <span class="section-heading-lower">Portfolio</span>
+            </h2>
+            <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+              <li class="list-unstyled-item list-hours-item d-flex">
+                {% comment %} <div class="intro-img img-fluid mb-3 mb-lg-0 rounded mr-3">
+                  <img class="img-fluid" src="{% static 'core/img/abstract.jpg' %}" alt="Business Website Logo">
+                </div> {% endcomment %}
+                <span>Business website: </span>
+                <span class="ml-auto"><a class="btn btn-primary ml-auto" href="https://businesswebsite.pythonanywhere.com/" target="_blank">View Project</a></span>
+              </li>
+              <li class="list-unstyled-item list-hours-item d-flex">
+                <span>Resume website: </span> 
+                <span class="ml-auto"><a class="btn btn-primary ml-auto" href="https://my-resume-one-pearl.vercel.app/index.html" target="_blank">View Project</a></span>
+              </li>
+              <li class="list-unstyled-item list-hours-item d-flex">
+                <span>Marketing website: </span> 
+                <span class="ml-auto"><a class="btn btn-primary ml-auto" href="https://bighit.cl" target="_blank">View Project</a></span>
+              </li>
+            </ul>
+            <p class="address mb-2">
+              <em>
+                <strong>Chile - Spain</strong>
+                {% comment %} <br />
+                Barcelona{% endcomment %}
+              </em>
+            </p>
+            <hr>
+            <p class="mb-0 text-center text-muted">
+              <em>If you have any questions, feel free to reach out!</em>
+              <br />
+              <a class="btn btn-secondary ml-auto m-2" href="https://www.linkedin.com/in/javiercifuentesa" target="_blank">LinkedIn Profile</a>
+              <br />
+              <a class="btn btn-secondary ml-auto m-2" href="https://github.com/javiercifuentesa" target="_blank">GitHub Profile</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,352 @@
+body {
+  font-family: 'Ubuntu';
+  background: linear-gradient(rgba(30, 27, 1, 0.738), rgba(49, 54, 2, 0.24)), url('../img/spacex-OHOU-5UVIYQ-unsplash.jpg') no-repeat center center fixed;
+  /* background: url('../img/spacex-OHOU-5UVIYQ-unsplash.jpg'); */
+  background-color: #2f170f;
+  /* background-repeat: no-repeat; */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Ubuntu, sans-serif';
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.75;
+}
+
+.text-faded {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.site-heading {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: 'Raleway', sans-serif;
+}
+
+.site-heading .site-heading-upper {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.site-heading .site-heading-lower {
+  font-size: 5rem;
+  font-weight: 100;
+  line-height: 4rem;
+}
+
+.page-section {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.section-heading {
+  text-transform: uppercase;
+}
+
+.section-heading .section-heading-upper {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  padding-bottom:.5rem;
+
+}
+
+.section-heading .section-heading-lower {
+  display: block;
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.section-heading .section-heading-under {
+  display: block;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 300;
+  margin-top:.5rem;
+}
+
+.bg-faded {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+#mainNav {
+  background-color: rgba(104, 101, 5, 0.644);
+  font-family: 'Raleway';
+}
+
+#mainNav .navbar-brand {
+  color: #c8ce0c;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 800;
+}
+
+#mainNav .navbar-nav .nav-item.active .nav-link {
+  color: #2f2f2f;
+}
+
+@media (min-width: 992px) {
+  #mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 0.9rem;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: rgba(34, 32, 32, 0.592);
+  }
+  #mainNav .nav-link:hover {
+    color: #e1de12;
+  }
+  .navbar-brand.text-primary {
+    color: #c8ce0c !important;
+  }
+}
+
+.btn-xl {
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.intro {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .intro .intro-img {
+    width: 55%;
+    float: right;
+    /* position: relative; */
+    /* margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem; */
+    box-shadow: 0px 3px 3px 0px rgba(33, 37, 41, 0.1);
+    /* border-radius: 0.5rem;
+    border: 0.5rem solid rgba(33, 37, 41, 0.1); */
+  }
+  .intro .intro-text {
+    left: 0;
+    width: 50%;
+    margin-top: 3rem;
+    position: absolute;
+    color: #2f2f2f;
+  }
+  .intro .intro-text .intro-button {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    bottom: -2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro .intro-text {
+    width: 55%;
+  }
+}
+
+.cta {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: rgba(104, 101, 5, 0.644);
+  color: #2f2f2f;
+}
+
+.cta .cta-inner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.cta .cta-inner:before {
+  border-radius: 0.5rem;
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+  pointer-events: none;
+}
+
+.cta .cta-inner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+@media (min-width: 992px) {
+  .about-heading .about-heading-img {
+    position: relative;
+  }
+  .about-heading .about-heading-content {
+    margin-top: -5rem;
+    position: relative;
+    /* z-index: 1; */
+  }
+}
+
+@media (min-width: 992px) {
+  .product-item .product-item-title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -3rem;
+  }
+  .product-item .product-item-img {
+    position: relative;
+    z-index: 0;
+    max-width: 60vw;
+  }
+  .product-item .product-item-description {
+    position: relative;
+    z-index: 1;
+    margin-top: -3rem;
+    max-width: 50vw;
+  }
+}
+
+.list-hours {
+  font-size: 0.9rem;
+}
+
+.list-hours .list-hours-item {
+  border-bottom: 1px solid rgba(230, 167, 86, 0.5);
+  padding-bottom: .25rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.list-hours .list-hours-item.today {
+  font-weight: bold;
+  color: #e6a756;
+}
+
+@media (min-width: 992px) {
+  .list-hours {
+    width: 50%;
+    font-size: 1.1rem;
+  }
+}
+
+.address strong {
+  font-size: 1.2rem;
+}
+
+.footer {
+  background-color: rgba(31, 30, 1, 0.784);
+}
+
+.text-primary {
+  color: #f3f3f3 !important;
+}
+a.text-primary:hover {
+  color: #c8ce0c !important;
+  text-decoration: none;
+}
+.text-secondary {
+  color: #c8ce0c !important;
+}
+
+.bg-primary {
+  background-color: #c8ce0c !important;
+}
+
+.btn {
+  box-shadow: 0px 3px 3px 0px rgba(33, 37, 41, 0.1);
+}
+
+.btn-primary {
+  background-color: #c8ce0c;
+  border-color: #2f2f2f;
+  color: #2f2f2f;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: #8a7f08;
+  border-color: #2f2f2f;
+  color: #f3f3f3;
+}
+
+.btn-secondary {
+  background-color: #2f2f2f;
+  border-color: #c8ce0c;
+  color: #f3f3f3;
+}
+
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+  background-color: #3d3d3d;
+  border-color: #f3f3f3;
+  color: #c8ce0c;
+}
+
+.font-weight-light {
+  font-weight: 100 !important;
+}
+
+.mbtm{
+  padding-top: 5rem;
+}
+
+.mbt{
+  padding-top: 2rem;
+}
+
+.mbt1{
+  padding-top: 1.25rem;
+}
+
+a.link{
+  color: #2f2f2f;
+}
+a.link:hover{
+  text-decoration: none;
+  color: #606304 !important;
+}
+
+a.link-page{
+  color: #f3f3f3;
+  text-decoration: none;
+}
+a.link-page:hover{
+  text-decoration: none;
+  color: #c8ce0c !important;
+}
+
+
+a.navbar-brand:hover{
+  color: #c8ce0c !important;
+}
+
+.section-content{
+  font-family: 'Lora' !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 28px !important;
+}
+
+ul.errorlist{
+  padding-top: .75rem;
+  font-style: italic;
+  color: red;
+}

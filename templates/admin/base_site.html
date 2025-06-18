@@ -1,0 +1,82 @@
+{% extends "admin/base.html" %}
+
+{% load static %}
+
+{% block title %}{{ title }} | {{ site_title|default:_("Django site admin") }}{% endblock %}
+
+{% block extrastyle %}
+    <style>
+        #site-name {
+            display: flex;
+            align-items: center; 
+            height: 100%;
+            color: #fff;
+            font-size: 1.5em;
+        }
+
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            background-color: #1f1f1f;
+            /* height: 60px; */
+            box-sizing: border-box;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .module caption, .inline-group h2 {
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            background-color: #1f1f1f;
+            font-style: italic;
+            font-weight: bold;
+        }
+        /*
+        .module, .inline-group {
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: red;
+        }
+
+        .module h2, .inline-group h2 {
+            color: #fff;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .module table, .inline-group table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .module table th, .inline-group table th,
+        .module table td, .inline-group table td {
+            padding: 10px;
+            border: 1px solid #444;
+            text-align: left;
+        }
+
+        .module table th, .inline-group table th {
+            background-color: #3a3a3a;
+            color: #fff;
+        }
+        */
+        
+    </style>
+{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">
+        {% comment %} <a href="{% url "admin:index" %}"> {% endcomment %}
+        <a href="{% url "home" %}">
+            <img src="{% static 'profileImage1.png' %}" alt="logo-admin" height="80px" />
+        </a>
+    </h1>
+{% endblock %}
+{% block nav-global %}{% endblock %}
