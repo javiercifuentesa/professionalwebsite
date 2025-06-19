@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: django-web
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn business_web.wsgi:application
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: django-db
+          property: connectionString
+
+databases:
+  - name: django-db
+    plan: free

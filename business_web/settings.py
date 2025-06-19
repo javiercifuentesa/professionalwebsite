@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c=1m^8&-(t)&rszgd4(5y)3qj#q9u53o4=5(lrhcy5q4_(f7bl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.onrender.com']
 
 
 # Application definition
@@ -126,10 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # media config
@@ -163,3 +163,7 @@ EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_HOST_USER = 'caf3d70693de30'
 EMAIL_HOST_PASSWORD = '4d3350a48bab0c'
 EMAIL_PORT = '2525'
+
+if os.environ.get('RENDER'):
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
