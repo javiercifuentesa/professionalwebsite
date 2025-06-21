@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'ckeditor',
     'contact',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -135,6 +137,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # media config
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Cloudinary config
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('dssbwvdd5'),
+    'API_KEY': os.environ.get('359874328174144'),
+    'API_SECRET': os.environ.get('davShAQ90122-7ISOrgD_LcAUPs'),
+}
+# Cloudinary storage
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # ckeditor config
 CKEDITOR_CONFIGS = {
