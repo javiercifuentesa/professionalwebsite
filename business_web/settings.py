@@ -147,6 +147,9 @@ CLOUDINARY_STORAGE = {
 # Cloudinary storage
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+print("DEFAULT_FILE_STORAGE:", DEFAULT_FILE_STORAGE)
+print("CLOUDINARY_STORAGE:", CLOUDINARY_STORAGE)
+
 # ckeditor config
 CKEDITOR_CONFIGS = {
     'default': {
