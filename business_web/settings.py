@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-c=1m^8&-(t)&rszgd4(5y)3qj#q9u53o4=5(lrhcy5q4_(f7bl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
@@ -44,14 +44,13 @@ INSTALLED_APPS = [
     'blog',
     'social.apps.SocialConfig',
     'pages.apps.PagesConfig',
-    'ckeditor',
     'contact',
-    'cloudinary',
-    'cloudinary_storage',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,7 +126,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'static'),
 # ]
@@ -135,20 +134,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # media config
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Cloudinary config
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-}
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+#     'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+#     'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+# }
 # Cloudinary storage
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-print("DEFAULT_FILE_STORAGE:", DEFAULT_FILE_STORAGE)
-print("CLOUDINARY_STORAGE:", CLOUDINARY_STORAGE)
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # ckeditor config
 CKEDITOR_CONFIGS = {
@@ -156,15 +152,12 @@ CKEDITOR_CONFIGS = {
         # 'toolbar': 'full',
         # 'height': 300,
         # 'width': '100%',
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source']
-        ]
-    },
+        'toolbar': 'full',
+    }
 }
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -178,6 +171,12 @@ EMAIL_HOST_USER = 'caf3d70693de30'
 EMAIL_HOST_PASSWORD = '4d3350a48bab0c'
 EMAIL_PORT = '2525'
 
-if os.environ.get('RENDER'):
-    import dj_database_url
-    DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
+# if os.environ.get('RENDER'):
+#     import dj_database_url
+#     DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
+
+if settings.DEBUG:
+    from django.conf import settings
+    from django.conf import urlpatterns
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

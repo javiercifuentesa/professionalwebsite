@@ -30,6 +30,8 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
 
     path('admin/', admin.site.urls),
+
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG:
@@ -37,6 +39,6 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # custom titles for admin
-admin.site.site_header = 'La Caffettiera Admin'
-admin.site.site_title = "La Caffettiera's Panel Admin"
-admin.site.index_title = "La Caffettiera's Panel Admin"
+admin.site.site_header = 'JaviCifuentesA Admin'
+admin.site.site_title = "JaviCifuentesA's Panel Admin"
+admin.site.index_title = "JaviCifuentesA's Panel Admin"
