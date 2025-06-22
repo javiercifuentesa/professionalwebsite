@@ -174,9 +174,3 @@ EMAIL_PORT = '2525'
 # if os.environ.get('RENDER'):
 #     import dj_database_url
 #     DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
-
-if settings.DEBUG:
-    from django.conf import settings
-    from django.conf import urlpatterns
-    from django.conf.urls.static import static
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
